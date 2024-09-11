@@ -6,8 +6,8 @@ def main():
     all_links = get_all_links(base_url, pages=1)  # Adjust pages as needed
     
     for link in all_links:
-        content, tags = find_content_articles(link.url)
-        print(link.url, link.title, content, tags)
+        content, tags = find_content_articles(link["url"])
+        print(link["url"], link["title"], content, tags)
 
 if __name__ == '__main__':
     main()
