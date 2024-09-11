@@ -4,10 +4,14 @@ import time
 
 
 def get_links_from_page(url):
+    """
+    url = url from the main page, the return will be the tittle and the link URL
+    """
     links = []
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     
+    #find the url and title in elements html
     for td in soup.find_all('td', class_='title'):
         a_tag = td.find('a')
         if a_tag and a_tag.get('href'):
